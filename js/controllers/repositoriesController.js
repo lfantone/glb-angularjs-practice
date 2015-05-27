@@ -1,14 +1,25 @@
-app.controller("requestRepoController",["$scope","$http","$routeParams","githubService",
-  function($scope,$http,$routeParams,githubService){
-
+app.controller("requestRepoController",["$scope","$routeParams","githubService",
+  function($scope,$routeParams,githubService){
+        $scope.myvar=true;
+        $scope.vari=true;
         var userGit=$routeParams.username;
         githubService.reposQuery(userGit)
-        .success(function(data) {
-            $scope.repos = data;
-        })
-        .error(function(status){
-            $scope.repos = status;
-        });
+        .then(
+          function(result){
+              if(result.error===404){
+                  $scope.myvar=false;
+                  $scope.vari=true;
+                  $scope.errorMessage = result;
+              }
+              else{
+                  $scope.myvar=true;
+                  $scope.vari=false;
+                  $scope.repos = result;
+              }
+          },
+          function(err,status){
+               $scope.repos = status;
 
+        });
   
 }]);

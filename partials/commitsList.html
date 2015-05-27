@@ -1,28 +1,37 @@
-<table class="table table-striped table-bordered">
-  <thead>
-    <tr class="success">
-      <td>
-        AUTHOR
-      </td>
-      <td>
-        MESSAGE
-      </td>
-      <td>
-        DATE
-      </td>
-    </tr>
-  </thead>
-  <tbody  ng-repeat="c in commits._embedded.Commits">
-    <tr>
-      <td>
-        {{c.Author}}
-      </td>
-      <td>
-        {{c.Message}}
-      </td>
-      <td>
-        {{c.Commit_Date|date:'dd-MM-yyyy'}}
-      </td>
-    </tr>
-  </tbody>
-</table>
+<section ng-hide="vari">
+  <section id="backtorepos"><a href="#/{{gitUser}}">back to repos</a></section>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr class="success">
+        <td>
+          AUTHOR
+        </td>
+        <td>
+          MESSAGE
+        </td>
+        <td>
+          DATE
+        </td>
+      </tr>
+    </thead>
+    <tbody  ng-repeat="c in commits._embedded.Commits">
+      <tr>
+        <td>
+          {{c.Author}}
+        </td>
+        <td>
+          {{c.Message}}
+        </td>
+        <td>
+          {{c.Commit_Date|date:'dd-MM-yyyy'}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section ng-hide="myvar">
+  <p>
+    Commits: {{messageError}} - Error: {{errorNumber}}
+  </p>
+</section>

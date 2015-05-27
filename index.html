@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Client|Angular JS</title>
 </head>
-<body>
+<body ng-controller="homeController">
 
   <section class="container">
     <header my-header></header>
     
     <section>
-      <input type="text"  ng-model="gitUser">
+      <input type="text"  ng-model="gitUser" autofocus>
       <a href="#/{{gitUser}}" class="btn btn-success btn-xs">Search</a>
-      <a href="#/" class="btn btn-info btn-xs">Home</a>
+      <a href="#/" class="btn btn-info btn-xs" ng-click="clean()">Home</a>
       <hr></hr>
       <div ng-view></div>
 
@@ -30,6 +30,7 @@
   <script src="js/services/githubService.js"></script>
   <script src="js/controllers/repositoriesController.js"></script>
   <script src="js/controllers/commitsController.js"></script> 
+  <script src="js/controllers/homeController.js"></script>
 
 </body>
 </html>

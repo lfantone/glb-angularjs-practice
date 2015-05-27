@@ -1,10 +1,36 @@
-app.service("githubService",function($http,$q){
-    this.reposQuery = function(userGit) {
-       return $http({method:'GET',url:'http://localhost:3000/'+userGit});
-    };
-    this.commitsQuery = function(userGit,repoGit) {
-       return $http({method:'GET',url:'http://localhost:3000/'+userGit+'/'+repoGit+'/commits'});
-    };
+app.service("githubService",["$http","$q",function($http,$q){
 
-});
+    this.reposQuery = function(userGit){
+    
+    var defer = $q.defer();
 
+    $http.get('http://localhost:3000/'+userGit)
+    .success(function(res){
+      defer.resolve(res);
+    })
+    .error(function(res){
+      defer.resolve(res);
+    })
+
+    return defer.promise;
+  };
+
+
+  this.commitsQuery = function(userGit,repoGit){
+    
+    var defer = $q.defer();
+
+    $http.get('http://localhost:3000/'+userGit+'/'+repoGit+'/commits')
+    .success(function(res){
+      defer.resolve(res);
+    })
+    .error(function(err, status){
+      defer.resolve(err);
+    })
+
+    return defer.promise;
+  };
+
+
+
+}]);

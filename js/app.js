@@ -2,7 +2,7 @@ var app=angular.module('app',['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
     .when('/',{
-        controller:'',
+        controller:'homeController',
         templateUrl:'partials/home.html'
     })
     .when('/:username',{
