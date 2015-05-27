@@ -18,7 +18,7 @@ app.controller("requestRepoController",["$scope","$routeParams","githubService",
               }
           },
           function(err,status){
-               $scope.repos = status;
+                  $scope.repos = status;
 
         });
   
