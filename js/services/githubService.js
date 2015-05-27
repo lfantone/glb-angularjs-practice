@@ -8,8 +8,8 @@ app.service("githubService",["$http","$q",function($http,$q){
     .success(function(res){
       defer.resolve(res);
     })
-    .error(function(res){
-      defer.resolve(res);
+    .error(function(err, status){
+      defer.resolve(err);
     })
 
     return defer.promise;
