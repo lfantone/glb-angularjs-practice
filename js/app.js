@@ -7,7 +7,7 @@ app.config(function($routeProvider) {
     })
     .when('/:username',{
         controller:'requestRepoController',
-        templateUrl:'partials/reposList.html'
+        templateUrl:'partials/repositoriesList.html'
     })
     .when('/:username/:repo',{
         controller:'requestCommitsController',

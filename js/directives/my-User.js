@@ -1,0 +1,9 @@
+app.directive('myUser',function(){
+  return{
+    restrict:'AE',
+    scope:{
+      username:'=param'
+    },
+    templateUrl:'partials/userTemplate.html'
+  }
+});

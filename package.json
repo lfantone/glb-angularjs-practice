@@ -21,4 +21,7 @@
   ],
   "author": "marcos",
   "license": "ISC",
+  "devDependencies": {
+    "karma-jasmine-html-reporter": "^0.1.8"
+  }
 }

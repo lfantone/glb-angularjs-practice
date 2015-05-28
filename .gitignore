@@ -1,4 +1,3 @@
-css
-vendor
+bower_components
 node_modules
-jasmine-1.3.1
+
