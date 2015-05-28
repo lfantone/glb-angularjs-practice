@@ -9,7 +9,7 @@ app.service("githubService",["$http","$q",function($http,$q){
       defer.resolve(res);
     })
     .error(function(err, status){
-      defer.resolve(err);
+      defer.reject(err);
     })
 
     return defer.promise;
@@ -25,7 +25,7 @@ app.service("githubService",["$http","$q",function($http,$q){
       defer.resolve(res);
     })
     .error(function(err, status){
-      defer.resolve(err);
+      defer.reject(err);
     })
 
     return defer.promise;
