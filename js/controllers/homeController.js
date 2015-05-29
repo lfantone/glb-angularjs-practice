@@ -1,4 +1,4 @@
-app.controller("homeController",["$scope","$location", function($scope,$location){
+app.controller("homeController",["$scope", function($scope){
         $scope.clean = function(){
           $scope.gitUser = '';
         };
