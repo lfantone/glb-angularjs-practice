@@ -20,5 +20,11 @@
     "test"
   ],
   "author": "marcos",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-karma": "0.0.4",
+    "gulp-open": "^0.3.2",
+    "karma-jasmine-runner-reporter": "^0.1.0"
+  }
 }
