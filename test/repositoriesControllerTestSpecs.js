@@ -4,59 +4,48 @@ var errorMessage=[{message:"NOT - Found", error: 404}];
 
 describe('test controller promise/',function(){
   var controller,
-      $scope,
-      serviceMock,
-      deferred,
-      promiseSpy;
+  $scope,
+  serviceMock,
+  promiseSpy={};
 
   beforeEach(module('app'));
-  beforeEach(inject(function ($rootScope,$controller,$q){
+  beforeEach(inject(function ($rootScope,$controller){
 
     $scope=$rootScope.$new();
-
-    deferred=$q.defer();
-    promiseSpy=deferred.promise;
 
     serviceMock=jasmine.createSpyObj('githubService',['reposQuery']);
 
     serviceMock.reposQuery.andReturn(promiseSpy);
 
-    promiseSpy.success = function (fn) {
-        promiseSpy.then( function (data) {
-        fn(data);
-      });
-      return promiseSpy;
-    };
+  }));  
 
-    promiseSpy.error = function (fn) {
-      promiseSpy.then( undefined, function (status) {
-        fn(status);
-      });
-      return promiseSpy;
-    };
+  afterEach(function(){
+    expect(serviceMock.reposQuery).toHaveBeenCalled();
+  });
 
+  it('Should test the success response promise/',inject(function ($controller){
+    promiseSpy.then=function(success,error){
+      success(reposHAL);
+    };
     controller = $controller('requestRepoController', {
       $scope : $scope,
       githubService: serviceMock
     });
-
-  }));  
-
-  it('Should test if reposQuery has been called/', function(){
-    expect(serviceMock.reposQuery).toHaveBeenCalled();
-  });
-
-  it('Should test the succes response promise/',function(){
-    deferred.resolve(reposHAL);
     $scope.$apply();
     expect($scope.repos).toEqual(reposHAL);
-  });
+  }));
 
-  it('Should test the error response promise/',function(){
-    deferred.reject(errorMessage);
+  it('Should test the error response promise/',inject(function ($controller){
+    promiseSpy.then=function(success,error){
+      error(errorMessage);
+    };
+    controller = $controller('requestRepoController', {
+      $scope : $scope,
+      githubService: serviceMock
+    });
     $scope.$apply();
     expect($scope.errorMessage).toEqual(errorMessage);
-  });
+  }));
 
 });
 
