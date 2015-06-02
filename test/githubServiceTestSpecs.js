@@ -12,14 +12,14 @@ describe("Github Service Test/", function(){
         $httpBackend = _$httpBackend_;
     }));
 
-    describe("reposQuery Test/", function(){
+    describe("Function reposQuery Test/", function(){
 
-        it("Repos Query should be defined/", function(){
+        it("Function reposQuery Should Be Defined", function(){
             $httpBackend.whenGET("http://localhost:3000/LALA").respond([{message:"NOT - Found", error: 404}]);
             expect(service.reposQuery()).toBeDefined();
         });
 
-        it("Should respond with Error", function(){
+        it("reposQuery Should Respond With Error", function(){
             $httpBackend.whenGET("http://localhost:3000/LALA").respond([{message:"NOT - Found", error: 404}]);
             var promise = service.reposQuery('LALA'),
                 result = null;
@@ -35,7 +35,7 @@ describe("Github Service Test/", function(){
         });
 
 
-        it("Should respond with Success", function(){
+        it("reposQuery Should Respond With Success", function(){
             $httpBackend.whenGET("http://localhost:3000/MDIAZ88").respond(reposHAL);
             var promise = service.reposQuery('MDIAZ88'),
                 result = null;

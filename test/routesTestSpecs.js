@@ -1,4 +1,4 @@
-describe('Testing routes/', function() {
+describe('Testing Routes/', function() {
   beforeEach(module('app'));
   var location, route, rootScope;
   beforeEach(inject(
@@ -15,7 +15,7 @@ describe('Testing routes/', function() {
         $httpBackend.expectGET('partials/home.html')
         .respond(200);
       }));
-    it('should use the correct home controller', function() {
+    it('should Use The Correct Home Controller', function() {
       location.path('/');
       rootScope.$digest();
       expect(route.current.controller).toBe('homeController');
@@ -29,7 +29,7 @@ describe('Testing routes/', function() {
         $httpBackend.expectGET('partials/repositoriesList.html')
         .respond(200);
       }));
-    it('should use the correct repositorie controller', function() {
+    it('Should Use The Correct Repositorie Controller', function() {
       location.path('/MDIAZ88');
       rootScope.$digest();
       expect(route.current.controller).toBe('requestRepoController');
@@ -43,7 +43,7 @@ describe('Testing routes/', function() {
         $httpBackend.expectGET('partials/commitsList.html')
         .respond(200);
       }));
-    it('should use the correct commits controller', function() {
+    it('Should Use The Correct Commits Controller', function() {
       location.path('/MDIAZ88/angular-lab');
       rootScope.$digest();
       expect(route.current.controller).toBe('requestCommitsController');
