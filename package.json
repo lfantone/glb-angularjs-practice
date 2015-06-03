@@ -1,0 +1,30 @@
+{
+  "name": "clientApp",
+  "version": "1.0.0",
+  "description": "angularjs",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "karma": "^0.12.16",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-dojo": "0.0.1",
+    "karma-jasmine": "^0.1.5"
+  },
+  "keywords": [
+    "angularjs",
+    "karma",
+    "jasmine",
+    "unit",
+    "test"
+  ],
+  "author": "marcos",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-karma": "0.0.4",
+    "gulp-open": "^0.3.2",
+    "karma-jasmine-runner-reporter": "^0.1.0"
+  }
+}

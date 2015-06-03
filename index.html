@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>
+    Client|Angular JS
+  </title>
+</head>
+<body ng-controller="homeController">
+
+  <section class="container">
+    <my-header></my-header>
+    <section>
+      <section class="userDirective">
+        <input type="text"  ng-model="gitUser" autofocus >
+        <a href="#/{{gitUser}}" class="btn btn-success btn-xs" id="search">
+          Search
+        </a>
+        <a href="#/" class="btn btn-info btn-xs" ng-click="clean()" id="home">
+          Home
+        </a>
+      </section>
+
+      <section class="userDirective">
+        <h4 class="userDirective">
+          <small>
+            Allowed Users:
+          </small>
+        </h4>
+        <my-user param="{name:'MDIAZ88'}" class="userDirective"></my-user>
+        <h4 class="userDirective">
+          <small> 
+            - 
+          </small>
+        </h4>
+        <my-user param="{name:'b3nshi'}"  class="userDirective"></my-user>
+      </section>
+
+      <hr></hr>
+      <div ng-view></div>
+
+    </section>
+  </section>
+
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/directives/my-Header.js"></script>
+  <script src="js/directives/my-User.js"></script>
+  <script src="js/services/githubService.js"></script>
+  <script src="js/controllers/repositoriesController.js"></script>
+  <script src="js/controllers/commitsController.js"></script> 
+  <script src="js/controllers/homeController.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+hr{
+  margin-top: 10px;
+    margin-bottom: 10px;
+}
+a{
+  color:#000000;
+  text-decoration: none;
+}
+a:hover{
+  color: #FF0000;
+  text-decoration: none;
+}
+#backtorepos{
+  display: block;
+  text-align: right;
+}
+.userDirective{
+  display:inline-block;
+}
