@@ -19,6 +19,7 @@ var testFiles = [
   'test/firstTestSpecs.js',
   'test/routesTestSpecs.js',
   'test/repositoriesControllerTestSpecs.js',
+  'test/commitsControllerTestSpecs.js',
   'test/githubServiceTestSpecs.js'
 ];
  

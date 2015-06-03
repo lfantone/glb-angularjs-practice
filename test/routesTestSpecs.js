@@ -1,4 +1,4 @@
-describe('Testing Routes/', function() {
+describe('*Testing Routes/', function() {
   beforeEach(module('app'));
   var location, route, rootScope;
   beforeEach(inject(
@@ -9,7 +9,7 @@ describe('Testing Routes/', function() {
     }));
 
 
-  describe('Home Route/', function() {
+  describe('-Home Route/', function() {
     beforeEach(inject(
       function($httpBackend) {
         $httpBackend.expectGET('partials/home.html')
@@ -23,7 +23,7 @@ describe('Testing Routes/', function() {
     });
   });
 
-  describe('Repos List Route/', function() {
+  describe('-Repos List Route/', function() {
     beforeEach(inject(
       function($httpBackend) {
         $httpBackend.expectGET('partials/repositoriesList.html')
@@ -37,7 +37,7 @@ describe('Testing Routes/', function() {
     });
   });
 
-  describe('Commits List Route/', function() {
+  describe('-Commits List Route/', function() {
     beforeEach(inject(
       function($httpBackend) {
         $httpBackend.expectGET('partials/commitsList.html')
