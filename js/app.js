@@ -3,15 +3,15 @@ app.config(function($routeProvider) {
     $routeProvider
     .when('/',{
         controller:'homeController',
-        templateUrl:'partials/home.html'
+        templateUrl:'partials/homeTemplate.html'
     })
     .when('/:username',{
-        controller:'requestRepoController',
-        templateUrl:'partials/repositoriesList.html'
+        controller:'repositoriesController',
+        templateUrl:'partials/repositoriesListView.html'
     })
     .when('/:username/:repo',{
-        controller:'requestCommitsController',
-        templateUrl:'partials/commitsList.html'
+        controller:'commitsController',
+        templateUrl:'partials/commitsListView.html'
     })
     .otherwise({
             redirectTo: '/'

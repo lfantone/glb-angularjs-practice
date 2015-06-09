@@ -17,3 +17,12 @@ a:hover{
 .userDirective{
   display:inline-block;
 }
+#name-width{
+  width:154px;
+}
+#date-width{
+  width:91px;
+}
+#description-width{
+  width:520px;
+}
