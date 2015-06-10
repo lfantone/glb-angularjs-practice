@@ -38,7 +38,7 @@
             {{p.number}}
           </td>
           <td>
-            {{p.id}}
+            <a ng-click="openPullRequest()">{{p.id}}</a>
           </td>
           <td>
             {{p.state}}
@@ -108,3 +108,4 @@
     Error: {{errorMessage.Error}} - Message: {{errorMessage.Message}}
   </p>
 </section>
+

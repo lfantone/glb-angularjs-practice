@@ -1,5 +1,6 @@
-app.controller("pullsAndCommitsController", ["$scope", "$routeParams", "githubService",
-    function($scope, $routeParams, githubService) {
+app.controller("pullsAndCommitsController", ["$scope", "$routeParams", "githubService","$modal","$log",
+    function($scope, $routeParams,githubService,$modal,$log) {
+
         $scope.myvar = true;
         $scope.vari = true;
         var username = $routeParams.username;
@@ -17,7 +18,33 @@ app.controller("pullsAndCommitsController", ["$scope", "$routeParams", "githubSe
                     $scope.errorMessage = err;
                 });
 
+  
+   $scope.animationsEnabled = true;
 
-    }
-]);
+  $scope.openPullRequest = function (size) {
+
+    var number=size;
+
+    var modalInstance = $modal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: '../partials/myModalContent.html',
+      controller: 'ModalInstanceCtrl',
+      resolve: {
+        items: function () {
+          return number;
+        }
+      }
+    });
+
+  
+  };
+
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+
+
+
+
+}]);
 

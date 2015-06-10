@@ -1,4 +1,4 @@
-var app=angular.module('app',['ngRoute','ngLoadingSpinner']);
+var app=angular.module('app',['ngRoute','ngLoadingSpinner','ui.bootstrap']);
 app.config(function($routeProvider) {
     $routeProvider
     .when('/',{
