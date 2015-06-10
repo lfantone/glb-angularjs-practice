@@ -1,0 +1,110 @@
+<span us-spinner="{radius:30, width:8, length: 16}"></span>
+<section ng-hide="vari">
+  <section id="backtorepos">
+    <a href="#/{{username}}">
+      back to repositories
+    </a>
+  </section>
+
+  <section>
+    <section>
+      <p>
+        Pull Requests
+      </p>
+    </section>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr class="info">
+          <td>
+            NUMBER
+          </td>
+          <td>
+            ID
+          </td>
+          <td>
+            STATE
+          </td>
+          <td>
+            TITLE
+          </td>
+          <td>
+            URL
+          </td>
+        </tr>
+      </thead>
+      <tbody >
+        <tr ng-repeat="p in response._embedded.Pullrequests">
+          <td>
+            {{p.number}}
+          </td>
+          <td>
+            {{p.id}}
+          </td>
+          <td>
+            {{p.state}}
+          </td>
+          <td>
+            {{p.title}}
+          </td>
+          <td>
+            <a href="{{p.url}}"> 
+              {{p.url}} 
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</section>
+
+<section ng-hide="vari">
+  <section>
+    <p>
+      Commits
+    </p>
+  </section>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr class="success">
+        <td>
+          AUTHOR
+        </td>
+        <td>
+          MESSAGE
+        </td>
+        <td>
+          DATE
+        </td>
+        <td>
+          URL
+        </td>
+      </tr>
+    </thead>
+    <tbody >
+      <tr  ng-repeat="c in response._embedded.Commits">
+        <td>
+          {{c.Author}}
+        </td>
+        <td id="message-width">
+          {{c.Message}}
+        </td>
+        <td>
+          {{c.Commit_Date|date:'dd-MM-yyyy'}}
+        </td>
+        <td>
+          <a href="{{c.url}}">
+            {{c.url}}
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+
+<section ng-hide="myvar">
+  <p>
+    Error: {{errorMessage.Error}} - Message: {{errorMessage.Message}}
+  </p>
+</section>

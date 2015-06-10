@@ -65,5 +65,16 @@ app.service("githubService", ["$http", "$q", function($http, $q) {
             })
         return defer.promise;
     };
+    this.getPullsAndCommits=function(username,repository){
+        var defer=$q.defer();
+        $http.get('http://localhost:3000/' + username + '/' + repository + '/all')
+        .success(function(res) {
+            defer.resolve(res);
+        })
+        .error(function(err) {
+            defer.reject(err);
+        })
+        return defer.promise;
+    };
 
 }]);

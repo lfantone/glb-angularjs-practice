@@ -1,4 +1,4 @@
-var app=angular.module('app',['ngRoute']);
+var app=angular.module('app',['ngRoute','ngLoadingSpinner']);
 app.config(function($routeProvider) {
     $routeProvider
     .when('/',{
@@ -9,9 +9,9 @@ app.config(function($routeProvider) {
         controller:'repositoriesController',
         templateUrl:'partials/repositoriesListView.html'
     })
-    .when('/:username/:repo',{
-        controller:'commitsController',
-        templateUrl:'partials/commitsListView.html'
+    .when('/:username/:repository',{
+        controller:'pullsAndCommitsController',
+        templateUrl:'partials/pullsAndCommitsListView.html'
     })
     .otherwise({
             redirectTo: '/'

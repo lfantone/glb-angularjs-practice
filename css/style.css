@@ -25,4 +25,12 @@ a:hover{
 }
 #description-width{
   width:520px;
+  text-align: justify;
+}
+#message-width{
+  width:242px;
+  text-align: justify;
+}
+.tableSection{
+  display:inline-block;
 }
