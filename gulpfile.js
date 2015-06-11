@@ -10,17 +10,21 @@ gulp.task('openReporter', function() {
 var testFiles = [
   'bower_components/angular/angular.js',
   'bower_components/angular-route/angular-route.min.js',
+  'bower_components/spin.js/spin.js',
+  'bower_components/angular-loading-spinner/angular-loading-spinner.js',
+  'bower_components/angular-spinner/angular-spinner.js',
+  'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
   'test/lib/angular-mocks.js',
   'js/app.js',
   'js/services/githubService.js',
   'js/controllers/homeController.js',
   'js/controllers/repositoriesController.js',
-  'js/controllers/commitsController.js',
-  'test/firstTestSpecs.js',
-  'test/routesTestSpecs.js',
-  'test/repositoriesControllerTestSpecs.js',
-  'test/commitsControllerTestSpecs.js',
-  'test/githubServiceTestSpecs.js'
+  'js/controllers/pullsAndCommitsController.js',
+  //'test/firstTestSpecs.js',
+  'test/routesTest.js',
+  'test/repositoriesControllerTest.js',
+  'test/pullsAndCommitsControllerTest.js',
+  //'test/githubServiceTestSpecs.js'
 ];
  
 gulp.task('test', function() {

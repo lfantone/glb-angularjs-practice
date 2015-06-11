@@ -10,7 +10,11 @@
     "karma": "^0.12.16",
     "karma-chrome-launcher": "^0.1.4",
     "karma-dojo": "0.0.1",
-    "karma-jasmine": "^0.1.5"
+    "karma-jasmine": "^0.1.5",
+    "gulp": "^3.9.0",
+    "gulp-karma": "0.0.4",
+    "gulp-open": "^0.3.2",
+    "karma-jasmine-runner-reporter": "^0.1.0"
   },
   "keywords": [
     "angularjs",
@@ -20,11 +24,5 @@
     "test"
   ],
   "author": "marcos",
-  "license": "ISC",
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-karma": "0.0.4",
-    "gulp-open": "^0.3.2",
-    "karma-jasmine-runner-reporter": "^0.1.0"
-  }
+  "license": "ISC"
 }

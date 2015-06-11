@@ -12,7 +12,7 @@ describe('*Testing Routes/', function() {
   describe('-Home Route/', function() {
     beforeEach(inject(
       function($httpBackend) {
-        $httpBackend.expectGET('partials/home.html')
+        $httpBackend.expectGET('partials/homeTemplate.html')
         .respond(200);
       }));
     it('should Use The Correct Home Controller', function() {
@@ -26,27 +26,27 @@ describe('*Testing Routes/', function() {
   describe('-Repos List Route/', function() {
     beforeEach(inject(
       function($httpBackend) {
-        $httpBackend.expectGET('partials/repositoriesList.html')
+        $httpBackend.expectGET('partials/repositoriesListView.html')
         .respond(200);
       }));
     it('Should Use The Correct Repositorie Controller', function() {
       location.path('/MDIAZ88');
       rootScope.$digest();
-      expect(route.current.controller).toBe('requestRepoController');
+      expect(route.current.controller).toBe('repositoriesController');
 
     });
   });
 
-  describe('-Commits List Route/', function() {
+  describe('-Commits and Pull Requests List Route/', function() {
     beforeEach(inject(
       function($httpBackend) {
-        $httpBackend.expectGET('partials/commitsList.html')
+        $httpBackend.expectGET('partials/pullsAndCommitsListView.html')
         .respond(200);
       }));
-    it('Should Use The Correct Commits Controller', function() {
-      location.path('/MDIAZ88/angular-lab');
+    it('Should Use The Correct Commits and Pull Requests Controller', function() {
+      location.path('/lfantone/glb-nodejs-practice');
       rootScope.$digest();
-      expect(route.current.controller).toBe('requestCommitsController');
+      expect(route.current.controller).toBe('pullsAndCommitsController');
 
     });
   });

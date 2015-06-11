@@ -13,8 +13,8 @@
   <section class="container">
     <my-header></my-header>
     <section>
-      <section class="userDirective">
-        <input type="text" ng-model="username" autofocus placeholder="Github Username">
+      <section class="userSearch">
+        <input type="text" ng-model="username" ng-keypress="myFunct($event)" autofocus placeholder="Github Username">
         <a href="#/{{username}}" class="btn btn-success btn-xs" id="search">
           Search
         </a>

@@ -16,5 +16,5 @@ app.controller("repositoriesController", ["$scope", "$routeParams", "githubServi
                     $scope.errorMessage = err;
                 });
 
-    }
-]);
+
+}]);
