@@ -18,32 +18,43 @@ app.controller("pullsAndCommitsController", ["$scope", "$routeParams", "githubSe
                     $scope.errorMessage = err;
                 });
 
-  
-   $scope.animationsEnabled = true;
 
-  $scope.openPullRequest = function (size) {
+  $scope.animationsEnabled = true;
 
-    var number=size;
 
-    var modalInstance = $modal.open({
-      animation: $scope.animationsEnabled,
-      templateUrl: '../partials/myModalContent.html',
-      controller: 'ModalInstanceCtrl',
-      resolve: {
-        items: function () {
-          return number;
-        }
-      }
-    });
+  $scope.openPullRequest = function (number,id) {
+      var items={username:username,repository:repository,number:number,id:id};
+       var modalInstance = $modal.open({
+                    animation: $scope.animationsEnabled,
+                    templateUrl: '../partials/pullRequestModalContent.html',
+                    controller: 'pullRequestModalController',
+                    //scope:$scope,
+                    resolve:{
+                      items:function(){
+                        return items;
+                      }
+                    }
+      });
+  };
 
-  
+  $scope.openCommit = function (sha) {
+      var items={username:username,repository:repository,sha:sha};
+       var modalInstance = $modal.open({
+                    animation: $scope.animationsEnabled,
+                    templateUrl: '../partials/commitModalContent.html',
+                    controller: 'commitModalController',
+                    //scope:$scope,
+                    resolve:{
+                      items:function(){
+                        return items;
+                      }
+                    }
+      });
   };
 
   $scope.toggleAnimation = function () {
     $scope.animationsEnabled = !$scope.animationsEnabled;
   };
-
-
 
 
 }]);

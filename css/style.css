@@ -34,3 +34,6 @@ a:hover{
 .tableSection{
   display:inline-block;
 }
+#commitModalTable{
+  text-align: center;
+}

@@ -9,7 +9,7 @@
   <section>
     <section>
       <p>
-        Pull Requests
+        Pull Requests - <small>Click ID to show more details</small>
       </p>
     </section>
     <table class="table table-striped table-bordered">
@@ -38,7 +38,7 @@
             {{p.number}}
           </td>
           <td>
-            <a ng-click="openPullRequest()">{{p.id}}</a>
+            <a ng-click="openPullRequest(p.number,p.id)">{{p.id}}</a>
           </td>
           <td>
             {{p.state}}
@@ -60,7 +60,7 @@
 <section ng-hide="vari">
   <section>
     <p>
-      Commits
+      Commits - <small>Click DATE to show more details</small>
     </p>
   </section>
   <table class="table table-striped table-bordered">
@@ -89,7 +89,7 @@
           {{c.Message}}
         </td>
         <td>
-          {{c.Commit_Date|date:'dd-MM-yyyy'}}
+          <a ng-click="openCommit(c.sha)">{{c.Commit_Date|date:'dd-MM-yyyy'}}</a>
         </td>
         <td>
           <a href="{{c.url}}">
