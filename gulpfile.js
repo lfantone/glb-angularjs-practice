@@ -20,7 +20,6 @@ var testFiles = [
   'js/controllers/homeController.js',
   'js/controllers/repositoriesController.js',
   'js/controllers/pullsAndCommitsController.js',
-  //'test/firstTestSpecs.js',
   'test/routesTest.js',
   'test/repositoriesControllerTest.js',
   'test/pullsAndCommitsControllerTest.js',

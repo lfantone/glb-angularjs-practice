@@ -24,11 +24,10 @@ app.controller("pullsAndCommitsController", ["$scope", "$routeParams", "githubSe
 
   $scope.openPullRequest = function (number,id) {
       var items={username:username,repository:repository,number:number,id:id};
-       var modalInstance = $modal.open({
+      var modalInstance = $modal.open({
                     animation: $scope.animationsEnabled,
                     templateUrl: '../partials/pullRequestModalContent.html',
                     controller: 'pullRequestModalController',
-                    //scope:$scope,
                     resolve:{
                       items:function(){
                         return items;
@@ -43,7 +42,6 @@ app.controller("pullsAndCommitsController", ["$scope", "$routeParams", "githubSe
                     animation: $scope.animationsEnabled,
                     templateUrl: '../partials/commitModalContent.html',
                     controller: 'commitModalController',
-                    //scope:$scope,
                     resolve:{
                       items:function(){
                         return items;
