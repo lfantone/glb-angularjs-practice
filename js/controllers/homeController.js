@@ -1,6 +1,5 @@
-app.controller("homeController",["$scope", function($scope){
-        $scope.clean = function(){
-          $scope.gitUser = '';
-        };
-                        
+app.controller("homeController", ["$scope",function($scope) {
+    $scope.clean = function() {
+        $scope.username = '';
+    };
 }]);

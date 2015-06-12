@@ -14,6 +14,26 @@ a:hover{
   display: block;
   text-align: right;
 }
-.userDirective{
+.userSearch{
   display:inline-block;
+}
+#name-width{
+  width:154px;
+}
+#date-width{
+  width:91px;
+}
+#description-width{
+  width:520px;
+  text-align: justify;
+}
+#message-width{
+  width:242px;
+  text-align: justify;
+}
+.tableSection{
+  display:inline-block;
+}
+#commitModalTable{
+  text-align: center;
 }

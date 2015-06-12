@@ -1,17 +1,17 @@
-var app=angular.module('app',['ngRoute']);
+var app=angular.module('app',['ngRoute','ngLoadingSpinner','ui.bootstrap']);
 app.config(function($routeProvider) {
     $routeProvider
     .when('/',{
         controller:'homeController',
-        templateUrl:'partials/home.html'
+        templateUrl:'partials/homeTemplate.html'
     })
     .when('/:username',{
-        controller:'requestRepoController',
-        templateUrl:'partials/repositoriesList.html'
+        controller:'repositoriesController',
+        templateUrl:'partials/repositoriesListView.html'
     })
-    .when('/:username/:repo',{
-        controller:'requestCommitsController',
-        templateUrl:'partials/commitsList.html'
+    .when('/:username/:repository',{
+        controller:'pullsAndCommitsController',
+        templateUrl:'partials/pullsAndCommitsListView.html'
     })
     .otherwise({
             redirectTo: '/'

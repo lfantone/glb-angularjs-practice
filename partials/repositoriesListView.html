@@ -1,0 +1,47 @@
+<span us-spinner="{radius:30, width:8, length: 16}"></span>
+<section ng-hide="vari">
+  <section>
+    <p>
+      Repositories - <small>Click NAME to show Pull Requests and Commits</small>
+    </p>
+  </section>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr class="success">
+        <td>
+          NAME
+        </td>
+        <td>
+          DATE
+        </td>
+        <td>
+          DESCRIPTION
+        </td>
+        <td>
+          URL
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="r in repos._embedded.Repos">
+        <td id="name-width">
+          <a href="#/{{username}}/{{r.name}}">{{r.name}}</a>
+        </td>
+        <td id="date-width">
+          {{r.date|date:'dd-MM-yyyy'}}
+        </td>
+        <td id="description-width">
+          {{r.description}}
+        </td>
+        <td>
+          <a href="{{r.url}}">{{r.url}}</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section ng-hide="myvar">
+  <p>
+    Error: {{errorMessage.Error}} - Message: {{errorMessage.Message}}
+  </p>
+</section>
