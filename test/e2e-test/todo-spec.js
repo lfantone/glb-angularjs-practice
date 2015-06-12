@@ -4,11 +4,14 @@ describe('My First E2E Test/', function() {
     });
 
     it('Should Insert a Username and compare to MDIAZ88', function() {
+        element(by.model('username')).sendKeys('MDIAZ88');
+        element(by.id('search')).click();        
+        expect(element(by.tagName('input')).getAttribute('value')).toEqual('MDIAZ88');        
+    });
 
-        element(by.model('gitUser')).sendKeys('MDIAZ88');
-        element(by.id('search')).click();
-        expect(element.all(by.repeater('r in repos._embedded.Repos')).count()).toBeGreaterThan(1);
-        expect(element(by.tagName('input')).getAttribute('value')).toEqual('MDIAZ88');
-        
+    it('Should Test The Repositories List',function(){
+      element(by.model('username')).sendKeys('lfantone');
+      element(by.id('search')).click();
+      expect(element.all(by.repeater('r in repos._embedded.Repos')).count()).toBeGreaterThan(1);
     });
 });
