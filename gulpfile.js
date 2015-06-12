@@ -20,10 +20,14 @@ var testFiles = [
   'js/controllers/homeController.js',
   'js/controllers/repositoriesController.js',
   'js/controllers/pullsAndCommitsController.js',
+  'js/controllers/pullRequestModalController.js',
+  'js/controllers/commitModalController.js',
   'test/routesTest.js',
   'test/repositoriesControllerTest.js',
   'test/pullsAndCommitsControllerTest.js',
-  //'test/githubServiceTestSpecs.js'
+  'test/pullRequestModalControllerTest.js',
+  'test/commitsModalControllerTest.js',
+  'test/githubServiceTest.js'
 ];
  
 gulp.task('test', function() {
